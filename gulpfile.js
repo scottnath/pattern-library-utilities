@@ -41,8 +41,10 @@ require('./').gulpDoxx(gulp,doxxOptions);
 // set up the gh-pages gulp task options
 var ghPagesOptions = {
   src: ['./docs/**/*'],
-  dependencies: ['doxx'] // run documentation generator before sending to GitHub Pages
-
+  dependencies: ['doxx'], // run documentation generator before sending to GitHub Pages
+  config: {
+    remoteUrl: 'git@github.com:pattern-library/pattern-library-utilities.git'
+  }
 };
 // add the `gulp ghPages` task to available gulp tasks
 require('./').gulpGhPages(gulp,ghPagesOptions);
